@@ -37,7 +37,8 @@ You will also need:
   - Scopes needed: `public_repo` (read-only is fine for public repos)
 
 ---
-
+## Sample Results from previous Runs for reference:
+![Example run on Microsoft Responsible AI Toolbox](./MS_example.png)
 ## Setup
 
 ### 1. Clone / extract the project
