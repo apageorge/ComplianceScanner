@@ -1,0 +1,70 @@
+obligations:
+  - id: obs_001
+    tenet: Technical Documentation
+    article: Art. 11
+    applies_if: "The system is an AI system requiring technical documentation under Annex IV"
+    applies_to_tiers: [unacceptable, high, limited, minimal]
+    signals_to_check:
+      - README describes system architecture and intended use
+      - docs/ folder or model card file exists
+      - Known limitations and risks are documented
+    not_checkable_in_code:
+      - Documentation submitted to notified body
+      - Documentation covers all Art. 11 Annex IV requirements
+    confidence_ceiling: 0.7
+
+  - id: obs_002
+    tenet: Human Oversight
+    article: Art. 14
+    applies_if: "The system is a high-risk AI system requiring human oversight mechanisms"
+    applies_to_tiers: [unacceptable, high, limited, minimal]
+    signals_to_check:
+      - Override or intervention mechanism exists in code
+      - Approval or review step present in pipeline
+      - Governance or oversight documentation exists
+    not_checkable_in_code:
+      - Human reviewer is adequately trained
+      - Override mechanisms are actually used in practice
+    confidence_ceiling: 0.6
+
+  - id: obs_003
+    tenet: Data Governance & Bias
+    article: Art. 10
+    applies_if: "The system uses training data and must demonstrate data governance practices"
+    applies_to_tiers: [unacceptable, high, limited, minimal]
+    signals_to_check:
+      - Fairness or bias evaluation present in tests or notebooks
+      - Dataset documentation or datasheets exist
+      - Data preprocessing steps are logged or documented
+    not_checkable_in_code:
+      - Training data examined for biases by domain experts
+      - Data governance policies filed with relevant authority
+    confidence_ceiling: 0.65
+
+  - id: obs_004
+    tenet: Transparency & AI Disclosure
+    article: Art. 50
+    applies_if: "The system interacts with users and must disclose its AI nature"
+    applies_to_tiers: [unacceptable, high, limited, minimal]
+    signals_to_check:
+      - README or docs state system is AI-powered
+      - User-facing disclosure of automated decision making
+      - Contact or accountability information provided
+    not_checkable_in_code:
+      - Disclosure is shown to end users at point of interaction
+      - Disclosure meets Art. 50 timing requirements
+    confidence_ceiling: 0.55
+
+  - id: obs_005
+    tenet: Risk Management System
+    article: Art. 9
+    applies_if: "The system requires an ongoing risk management process throughout its lifecycle"
+    applies_to_tiers: [unacceptable, high, limited, minimal]
+    signals_to_check:
+      - CHANGELOG or version history tracks risk-relevant changes
+      - Security policy or responsible disclosure process exists
+      - Testing or evaluation suite covers failure modes
+    not_checkable_in_code:
+      - Risk management process is continuous and documented
+      - Residual risks communicated to deployers
+    confidence_ceiling: 0.5
